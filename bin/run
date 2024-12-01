@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+	declare(strict_types=1);
+
+	use AoC\Runner;
+
+	ini_set("memory_limit", "256M");
+
+	const ROOT = __DIR__ . "/../";
+
+	require_once(ROOT . "bin/init.php");
+
+	// ./bin/run --day 1 --override example --verbose
+	// ./bin/run --day 1 --override example --verbose --time
+	// ./bin/run -d=1 -o=example -v
+	// ./bin/run -a
+
+	$options = getopt("d:o:c:vta", ["day:", "override:", "config:", "verbose", "time", "all"]);
+
+	$day = (int)($options['day'] ?? $options['d'] ?? null);
+	$override = $options['override'] ?? $options['o'] ?? null;
+	$config = $options['config'] ?? $options['c'] ?? null;
+	$verbose = isset($options['verbose']) || isset($options['v']);
+	$time = isset($options['time']) || isset($options['t']);
+	$all = isset($options['all']) || isset($options['a']);
+
+	$runner = new Runner($config);
+	$all ? $runner->all() : $runner->single($day, $verbose, $time, $override);
