@@ -6,3 +6,4 @@ https://adventofcode.com/2024/
 
 ##### Day 01
 
+Nice and simple, didn't bother to implement negative numbers for the difference as the data was all positive.
