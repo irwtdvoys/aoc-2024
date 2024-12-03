@@ -11,3 +11,7 @@ Nice and simple, didn't bother to implement negative numbers for the difference 
 ##### Day 02
 
 Reused difference code from day 1, caught the double number start issue before it happened ;)
+
+##### Day 03
+
+REGEX!
