@@ -15,3 +15,7 @@ Reused difference code from day 1, caught the double number start issue before i
 ##### Day 03
 
 REGEX!
+
+##### Day 04
+
+Just ran a quick search for the start and middle of the x characters, just had to be careful to avoid overflowing the edge.
