@@ -14,5 +14,9 @@
 	{
 		"day": 4,
 		"class": "CeresSearch"
+	},
+	{
+		"day": 5,
+		"class": "PrintQueue"
 	}
 ]
