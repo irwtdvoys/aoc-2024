@@ -18,6 +18,8 @@
 		/** @var Direction[][] */
 		private array $visited;
 
+		private array $order = [];
+
 		private Guard $guard;
 
 		public function __construct(int $day, bool $verbose = false, string $override = null)
@@ -38,7 +40,7 @@
 					if ($value === "^")
 					{
 						$this->guard = new Guard($x, $y, Direction::North);
-						$this->visited[(string)$this->guard->position][] = $this->guard->direction;
+						$this->visit($this->guard->position, $this->guard->direction);
 						$value = ".";
 					}
 
@@ -99,7 +101,7 @@
 					throw new Exception("Loop Found", 1);
 				}
 
-				$this->visited[(string)$this->guard->position][] = $this->guard->direction;
+				$this->visit($this->guard->position, $this->guard->direction);
 
 				$target = $this->guard->target();
 
@@ -108,6 +110,21 @@
 					throw new Exception("Left Map @ " . $target, 0);
 				}
 			}
+		}
+
+		private function visit(Position2d $position, Direction $direction): void
+		{
+			if (!isset($this->visited[(string)$position]))
+			{
+				$this->visited[(string)$position] = [];
+				$this->order[] = [
+					$position->x,
+					$position->y,
+					$direction
+				];
+			}
+
+			$this->visited[(string)$position][] = $direction;
 		}
 
 		private function followRoute(): bool
@@ -133,8 +150,12 @@
 		{
 			$result = new Result(0, 0);
 
-			$init = clone $this->guard->position;
-			$initMap = $this->map;
+			$cache = (object)[
+				"visited" => [],
+				"position" => clone $this->guard->position,
+				"direction" => $this->guard->direction,
+				"map" => $this->map,
+			];
 
 			$this->draw();
 			$this->followRoute();
@@ -142,23 +163,22 @@
 
 			$result->part1 = count($this->visited);
 
-			$visited = array_map(
-				function ($element)
-				{
-					return new Position2d(...array_map("intval", explode(",", $element)));
-				},
-				array_keys($this->visited)
-			);
+			// Don't place an obstacle at start position
+			array_shift($this->order);
+			$order = $this->order;
 
-			foreach ($visited as $next)
+			foreach ($order as $next)
 			{
 				// reset
-				$this->visited = [];
-				$this->guard = new Guard($init->x, $init->y, Direction::North);
-				$this->map = $initMap;
+				$this->visited = $cache->visited;
+				$this->map = $cache->map;
+				$this->guard = new Guard($cache->position->x, $cache->position->y, $cache->direction);
+				$this->order = [];
+
+				[$x, $y, $direction] = $next;
 
 				// set new obstacle
-				$this->map[$next->y][$next->x] = "#";
+				$this->map[$y][$x] = "#";
 
 				$exits = $this->followRoute();
 
@@ -166,6 +186,10 @@
 				{
 					$result->part2++;
 				}
+
+				$cache->visited[(string)$cache->position][] = $cache->direction;
+				$cache->position = new Position2d($x, $y);
+				$cache->direction = $direction;
 			}
 
 			return $result;
