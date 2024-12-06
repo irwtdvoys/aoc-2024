@@ -18,5 +18,9 @@
 	{
 		"day": 5,
 		"class": "PrintQueue"
+	},
+	{
+		"day": 6,
+		"class": "GuardGallivant"
 	}
 ]
