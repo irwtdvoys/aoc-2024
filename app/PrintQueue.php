@@ -150,7 +150,7 @@
 			{
 				[$current, $currentPath] = array_pop($stack);
 
-				$this->output(implode("->", $currentPath), true, true);
+				$this->output(implode("->", $currentPath));
 
 				// check result
 				if ($current->value === $target && $length === count($currentPath))
