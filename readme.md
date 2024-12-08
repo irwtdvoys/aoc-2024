@@ -2,14 +2,15 @@
 
 https://adventofcode.com/2024/
 
-| Day | Name               |    Part 1 |   Part 2 | Time      | Memory     |
-|----:|:-------------------|----------:|---------:|:----------|:-----------|
-|   1 | Historian Hysteria |   2904518 | 18650129 | 2.2614ms  | 1.2862 MiB |
-|   2 | Red Nosed Reports  |       257 |      328 | 3.6076ms  | 1.4555 MiB |
-|   3 | Mull It Over       | 166630675 | 93465710 | 648.22μs  | 1.2483 MiB |
-|   4 | Ceres Search       |      2517 |     1960 | 21.8478ms | 2.8809 MiB |
-|   5 | Print Queue        |      4281 |     5466 | 21.8502s  | 1.6292 MiB |
-|   6 | Guard Gallivant    |      4789 |     1304 | 4.7323s   | 6.4104 MiB |
+| Day | Name                   |        Part 1 |          Part 2 | Time      | Memory     |
+|----:|:-----------------------|--------------:|----------------:|:----------|:-----------|
+|   1 | Historian Hysteria     |       2904518 |        18650129 | 2.2614ms  | 1.2862 MiB |
+|   2 | Red Nosed Reports      |           257 |             328 | 3.6076ms  | 1.4555 MiB |
+|   3 | Mull It Over           |     166630675 |        93465710 | 648.22μs  | 1.2483 MiB |
+|   4 | Ceres Search           |          2517 |            1960 | 21.8478ms | 2.8809 MiB |
+|   5 | Print Queue            |          4281 |            5466 | 21.8502s  | 1.6292 MiB |
+|   6 | Guard Gallivant        |          4789 |            1304 | 4.7323s   | 6.4104 MiB |
+|   7 | Bridge Repair          | 3312271365652 | 509463489296712 | 30.1085ms | 3.0521 MiB |
 
 ## Notes
 
@@ -36,3 +37,7 @@ Tried a very naive bruteforce before attempting a tree based on the rules. In th
 ##### Day 06
 
 Kept track of all directions taken through a space in a hash map to detect loops. Ran for each visited space from part 1 and counted loops detected. Further optimised to not recalculate the start of the path each time.
+
+##### Day 07
+
+Tough one. Struggled with issues on non-test data so rewrote working in reverse.
