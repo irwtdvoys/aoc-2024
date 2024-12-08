@@ -11,6 +11,7 @@ https://adventofcode.com/2024/
 |   5 | Print Queue            |          4281 |            5466 | 21.8502s  | 1.6292 MiB |
 |   6 | Guard Gallivant        |          4789 |            1304 | 4.7323s   | 6.4104 MiB |
 |   7 | Bridge Repair          | 3312271365652 | 509463489296712 | 30.1085ms | 3.0521 MiB |
+|   8 | Resonant Collinearity  |           285 |             944 | 34.6012ms | 1.2077 MiB |
 
 ## Notes
 
@@ -41,3 +42,7 @@ Kept track of all directions taken through a space in a hash map to detect loops
 ##### Day 07
 
 Tough one. Struggled with issues on non-test data so rewrote working in reverse.
+
+##### Day 08
+
+Nice and straight forward. Part two just needed a loop.
