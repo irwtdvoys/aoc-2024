@@ -26,5 +26,9 @@
 	{
 		"day": 7,
 		"class": "BridgeRepair"
+	},
+	{
+		"day": 8,
+		"class": "ResonantCollinearity"
 	}
 ]
