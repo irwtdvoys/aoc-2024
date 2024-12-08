@@ -22,5 +22,9 @@
 	{
 		"day": 6,
 		"class": "GuardGallivant"
+	},
+	{
+		"day": 7,
+		"class": "BridgeRepair"
 	}
 ]
