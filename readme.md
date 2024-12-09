@@ -2,16 +2,17 @@
 
 https://adventofcode.com/2024/
 
-| Day | Name                   |        Part 1 |          Part 2 | Time      | Memory     |
-|----:|:-----------------------|--------------:|----------------:|:----------|:-----------|
-|   1 | Historian Hysteria     |       2904518 |        18650129 | 2.2614ms  | 1.2862 MiB |
-|   2 | Red Nosed Reports      |           257 |             328 | 3.6076ms  | 1.4555 MiB |
-|   3 | Mull It Over           |     166630675 |        93465710 | 648.22μs  | 1.2483 MiB |
-|   4 | Ceres Search           |          2517 |            1960 | 21.8478ms | 2.8809 MiB |
-|   5 | Print Queue            |          4281 |            5466 | 21.8502s  | 1.6292 MiB |
-|   6 | Guard Gallivant        |          4789 |            1304 | 4.7323s   | 6.4104 MiB |
-|   7 | Bridge Repair          | 3312271365652 | 509463489296712 | 30.1085ms | 3.0521 MiB |
-|   8 | Resonant Collinearity  |           285 |             944 | 34.6012ms | 1.2077 MiB |
+| Day | Name                  |        Part 1 |          Part 2 | Time      | Memory      |
+|----:|:----------------------|--------------:|----------------:|:----------|:------------|
+|   1 | Historian Hysteria    |       2904518 |        18650129 | 2.2614ms  | 1.2862 MiB  |
+|   2 | Red Nosed Reports     |           257 |             328 | 3.6076ms  | 1.4555 MiB  |
+|   3 | Mull It Over          |     166630675 |        93465710 | 648.22μs  | 1.2483 MiB  |
+|   4 | Ceres Search          |          2517 |            1960 | 21.8478ms | 2.8809 MiB  |
+|   5 | Print Queue           |          4281 |            5466 | 21.8502s  | 1.6292 MiB  |
+|   6 | Guard Gallivant       |          4789 |            1304 | 4.7323s   | 6.4104 MiB  |
+|   7 | Bridge Repair         | 3312271365652 | 509463489296712 | 30.1085ms | 3.0521 MiB  |
+|   8 | Resonant Collinearity |           285 |             944 | 34.6012ms | 1.2077 MiB  |
+|   9 | Disk Fragmenter       | 6398252054886 |   6415666220005 | 61.1378s  | 14.6985 MiB |
 
 ## Notes
 
@@ -46,3 +47,7 @@ Tough one. Struggled with issues on non-test data so rewrote working in reverse.
 ##### Day 08
 
 Nice and straight forward. Part two just needed a loop.
+
+##### Day 09
+
+Struggled with part 2 today. Tried a Doubly linked List which worked on the test data but was very slow. Changed tactic to a list of files and spaces. It works but still takes almost a minute...  
