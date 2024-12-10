@@ -34,5 +34,9 @@
 	{
 		"day": 9,
 		"class": "DiskFragmenter"
+	},
+	{
+		"day": 10,
+		"class": "HoofIt"
 	}
 ]
