@@ -13,6 +13,7 @@ https://adventofcode.com/2024/
 |   7 | Bridge Repair         | 3312271365652 | 509463489296712 | 30.1085ms | 3.0521 MiB  |
 |   8 | Resonant Collinearity |           285 |             944 | 34.6012ms | 1.2077 MiB  |
 |   9 | Disk Fragmenter       | 6398252054886 |   6415666220005 | 61.1378s  | 14.6985 MiB |
+|  10 | Hoof It               |           548 |            1252 | 9.545ms   | 1.2013 MiB  |
 
 ## Notes
 
@@ -51,3 +52,7 @@ Nice and straight forward. Part two just needed a loop.
 ##### Day 09
 
 Struggled with part 2 today. Tried a Doubly linked List which worked on the test data but was very slow. Changed tactic to a list of files and spaces. It works but still takes almost a minute...  
+
+##### Day 10
+
+Recursive Depth First Search. Returned a list of end points reached with each path. Counted unique for part 1 and all of them for part 2.  
