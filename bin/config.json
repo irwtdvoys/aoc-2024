@@ -38,5 +38,9 @@
 	{
 		"day": 10,
 		"class": "HoofIt"
+	},
+	{
+		"day": 11,
+		"class": "PlutonianPebbles"
 	}
 ]
